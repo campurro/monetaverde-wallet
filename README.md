@@ -19,7 +19,7 @@ Currently built release is compiled with boost 1.60 and Qt 5.10
 
 * Clone the repository :
 ```
-$ git clone https://github.com/campurro/monetaverde-wallet.git
+$ git clone https://github.com/mcnproject/monetaverde-wallet.git
 ```
 
 * Update core submodule :
