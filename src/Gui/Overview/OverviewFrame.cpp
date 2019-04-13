@@ -67,7 +67,7 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
 
   setStyleSheet(Settings::instance().getCurrentStyle().makeStyleSheet(OVERVIEW_STYLE_SHEET_TEMPLATE));
   Settings::instance().addObserver(this);
-  m_ui->m_newsFrame->setVisible(Settings::instance().isNewsEnabled());
+  //m_ui->m_newsFrame->setVisible(Settings::instance().isNewsEnabled());
 }
 
 OverviewFrame::~OverviewFrame() {
@@ -84,7 +84,7 @@ void OverviewFrame::setMiningManager(IMiningManager* _miningManager) {
 }
 
 void OverviewFrame::setBlogReader(INewsReader* _blogReader) {
-  m_ui->m_blogFrame->setNewsReader(_blogReader);
+  //m_ui->m_blogFrame->setNewsReader(_blogReader);
 }
 
 void OverviewFrame::setMainWindow(QWidget* _mainWindow) {
@@ -139,7 +139,7 @@ void OverviewFrame::setMinerModel(QAbstractItemModel* _model) {
 }
 
 void OverviewFrame::settingsUpdated() {
-  m_ui->m_newsFrame->setVisible(Settings::instance().isNewsEnabled());
+  //m_ui->m_newsFrame->setVisible(Settings::instance().isNewsEnabled());
 }
 
 void OverviewFrame::rowsInserted(const QModelIndex& _parent, int _first, int _last) {

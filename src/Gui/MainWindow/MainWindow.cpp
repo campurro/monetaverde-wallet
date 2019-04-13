@@ -134,7 +134,7 @@ MainWindow::MainWindow(ICryptoNoteAdapter* _cryptoNoteAdapter, IAddressBookManag
     uiItem->setDonationManager(m_donationManager);
     uiItem->setMiningManager(m_miningManager);
     uiItem->setApplicationEventHandler(m_applicationEventHandler);
-    uiItem->setBlogReader(m_blogReader);
+    // uiItem->setBlogReader(m_blogReader);
     uiItem->setMainWindow(this);
     uiItem->setNodeStateModel(m_nodeStateModel);
     uiItem->setWalletStateModel(m_walletStateModel);
