@@ -4,11 +4,11 @@ Monetaverde is a cryptonight based cryptocurrency (ticker : MCN)
 
 This is the monetaverde gui wallet source code and binary release for MacOs, Windows and linux
 
-[Main website](http://getmonetaverde.org)
+[Main website](https://mcn.green)
 
-[BitcoinTalk main announcement thread](https://bitcointalk.org/index.php?topic=653141.0)
+[BitcoinTalk main announcement thread](https://bitcointalk.org/index.php?topic=5069658)
 
-[Monetaverde core (source and binaries)](https://github.com/campurro/monetaverde)
+[monetaverde-wallet gui (source and binaries)](https://github.com/mcnproject/monetaverde-wallet)
 
 
 Compilation tips :
@@ -19,7 +19,7 @@ Currently built release is compiled with boost 1.60 and Qt 5.10
 
 * Clone the repository :
 ```
-$ git clone https://github.com/campurro/monetaverde-wallet.git
+$ git clone https://github.com/mcnproject/monetaverde-wallet.git
 ```
 
 * Update core submodule :
