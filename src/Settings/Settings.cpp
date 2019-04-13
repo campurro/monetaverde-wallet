@@ -80,8 +80,7 @@ Settings& Settings::instance() {
 
 Settings::Settings() : m_p2pBindPort(0), m_cmdLineParser(nullptr) {
   m_defaultPoolList << "monetaverde.minercountry.com:3333";
-  m_defaultPoolList << "plura.minercountry.com:3333";
-  m_defaultPoolList << "balkancoin.minercountry.com:3333";
+  m_defaultPoolList << "inf8.minercountry.com:3334";
 
   Style* lightStyle = new LightStyle();
   Style* darkStyle = new DarkStyle();
