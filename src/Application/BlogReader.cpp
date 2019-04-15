@@ -34,7 +34,7 @@ namespace WalletGui {
 namespace {
 
 const char BLOG_RSS_SCHEME[] = "https";
-const char BLOG_RSS_HOST[] = "forum.getmonetaverde.org";
+const char BLOG_RSS_HOST[] = "mcn.green";
 const char BLOG_RSS_PATH[] = "/forum/26-announcements.xml/";
 //const char BLOG_RSS_PATH[] = "/feed/atom/";
 /*
