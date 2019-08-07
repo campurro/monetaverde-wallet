@@ -50,7 +50,15 @@ include(CryptoNoteWallet.cmake)
 
 project(${CN_PROJECT_NAME})
 
-set(CRYPTONOTE_LIB cryptoNote)
+set(CRYPTONOTE_LIB cryptonote)
+
+find_package(Qt5 REQUIRED
+    Gui
+    Widgets
+    Network
+    DBus
+    Svg
+    )
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR}
     src
@@ -61,16 +69,10 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR}
     cryptonote/src
     cryptonote/src/MultiHashing/xmrig
     cryptonote/src/MultiHashing/xmrig/3rdparty
+    ${Qt5DBus_INCLUDE_DIRS}
     )
 
-find_package(Qt5 REQUIRED
-    Gui
-    Widgets
-    Network
-    DBus
-    )
-
-include_directories(${Qt5DBus_INCLUDE_DIRS} cryptonote/external/rocksdb/include/ include src external "${CMAKE_CURRENT_BINARY_DIR}/version")
+#include_directories( "${CMAKE_CURRENT_BINARY_DIR}/version")
 
 set(Boost_USE_STATIC_LIBS ON)
 if(WIN32)
@@ -326,16 +328,7 @@ endif()
 
 
 file(GLOB_RECURSE CRYPTONOTE_SOURCES
-    cryptonote/external/miniupnpc/connecthostport.c
-    cryptonote/external/miniupnpc/igd_desc_parse.c
-    cryptonote/external/miniupnpc/minisoap.c
-    cryptonote/external/miniupnpc/miniupnpc.c
-    cryptonote/external/miniupnpc/miniwget.c
-    cryptonote/external/miniupnpc/minixml.c
-    cryptonote/external/miniupnpc/portlistingparse.c
-    cryptonote/external/miniupnpc/receivedata.c
-    cryptonote/external/miniupnpc/upnpcommands.c
-    cryptonote/external/miniupnpc/upnpreplyparse.c
+    cryptonote/external/miniupnpc/
     cryptonote/src/BlockchainExplorer/BlockchainExplorer.cpp
     cryptonote/src/BlockchainExplorer/BlockchainExplorerErrors.cpp
     cryptonote/src/Common/Base58.cpp
@@ -510,7 +503,7 @@ set(CRYPTONOTE_SOURCES ${CRYPTONOTE_SOURCES} ${PLATFORM_SOURCES} ${CRYPTONOTE_PL
 
 add_library(${CRYPTONOTE_LIB} STATIC ${CRYPTONOTE_SOURCES} "${MultiHashing}" "${MultiHashing_OS}" "${XMRIG_ASM_SOURCES}" "${CN_GPU_SOURCES}")
 set_target_properties(${CRYPTONOTE_LIB} PROPERTIES COMPILE_DEFINITIONS _GNU_SOURCE)
-target_link_libraries(${CRYPTONOTE_LIB} rocksdb ${Boost_LIBRARIES} ${XMRIG_ASM_LIBRARY} ${Qt5DBus_LIBRARIES})
+target_link_libraries(${CRYPTONOTE_LIB} upnpc-static rocksdb ${Boost_LIBRARIES} ${XMRIG_ASM_LIBRARY} ${Qt5DBus_LIBRARIES})
 
 add_executable(${PROJECT_NAME} ${BUILD_PLATFORM} ${BUILD_RESOURCES} ${WALLET_SOURCES} ${WALLET_HEADERS} ${WALLET_FORMS_HEADERS} ${WALLET_RESOURCES_RCC})
 

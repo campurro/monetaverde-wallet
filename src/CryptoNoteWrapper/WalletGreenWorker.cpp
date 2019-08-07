@@ -844,7 +844,7 @@ void WalletGreenWorker::processEvent(const CryptoNote::WalletEvent& _event) {
       m_isSaved.store(false);
       WalletLogger::debug(tr("[Wallet] Event: Synchronization. Current=%1, Total=%2").arg(_event.synchronizationProgressUpdated.processedBlockCount).
         arg(_event.synchronizationProgressUpdated.totalBlockCount));
-      Q_EMIT synchronizationProgressUpdatedSignal(_event.synchronizationProgressUpdated.processedBlockCount,
+      Q_EMIT synchronizationProgressUpdatedSignal(_event.synchronizationProgressUpdated.processedBlockCount - 1,
         _event.synchronizationProgressUpdated.totalBlockCount);
       break;
     case CryptoNote::WalletEventType::SYNC_COMPLETED:

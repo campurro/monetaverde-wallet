@@ -163,7 +163,7 @@ void WalletStateModel::synchronizationProgressUpdated(quint32 _current, quint32 
 }
 
 void WalletStateModel::synchronizationCompleted() {
-  m_isSynchronized = (m_currentHeight == m_totalHeight);
+  m_isSynchronized = ((m_totalHeight - m_currentHeight) <= 1);
   Q_EMIT dataChanged(index(0, COLUMN_ABOUT_TO_BE_SYNCHRONIZED), index(0, COLUMN_ABOUT_TO_BE_SYNCHRONIZED));
   Q_EMIT dataChanged(index(0, COLUMN_IS_SYNCHRONIZED), index(0, COLUMN_IS_SYNCHRONIZED));
 }
